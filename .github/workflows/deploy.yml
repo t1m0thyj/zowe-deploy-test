@@ -25,3 +25,5 @@ jobs:
 
     - name: Version and Deploy
       uses: tjohnsonBCM/zowe-deploy@master
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
