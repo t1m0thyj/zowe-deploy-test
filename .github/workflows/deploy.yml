@@ -15,15 +15,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
 
     - name: Use Node.js 12.x
       uses: actions/setup-node@v1
       with:
         node-version: 12.x
 
-    - name: Version and Deploy
+    - name: Version and Publish
       uses: tjohnsonBCM/zowe-deploy@master
       with:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
