@@ -1,5 +1,5 @@
 # Changelog
 
-## Recent Changes
+## `1.0.22`
 
 - abc
