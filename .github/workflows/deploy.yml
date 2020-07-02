@@ -21,9 +21,13 @@ jobs:
       with:
         node-version: 12.x
 
+    - run: npm pack
+
     - name: Version and Publish
       uses: tjohnsonBCM/zowe-deploy@master
       with:
+        changelog-header: '## Recent Changes'
+        github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
-        npm-email: timothy.johnson@broadcom.com
+        npm-email: 'timothy.johnson@broadcom.com'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
