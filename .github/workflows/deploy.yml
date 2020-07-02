@@ -24,4 +24,7 @@ jobs:
     - name: Version and Publish
       uses: tjohnsonBCM/zowe-deploy@master
       with:
+        npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
+        npm-email: timothy.johnson@broadcom.com
+        publish: npm
         repo-token: ${{ secrets.GITHUB_TOKEN }}
