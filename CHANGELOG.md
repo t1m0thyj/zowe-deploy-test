@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.1.7`
 
 - fix 4b
 
