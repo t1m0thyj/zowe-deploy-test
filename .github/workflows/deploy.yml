@@ -29,8 +29,7 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
-        path: package.tgz
+        path: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
 
     - name: Publish
       uses: tjohnsonBCM/zowe-deploy@master
