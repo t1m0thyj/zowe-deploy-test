@@ -24,7 +24,7 @@ jobs:
     - run: npm pack
 
     - name: Version and Publish
-      uses: tjohnsonBCM/zowe-deploy@master
+      uses: tjohnsonBCM/zowe-deploy@semver-labels
       with:
         changelog-header: '## Recent Changes'
         github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
