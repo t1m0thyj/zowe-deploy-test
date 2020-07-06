@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Fix check if NPM package is already published
+
 ## `1.1.12`
 
 - Skip GitHub publish if release already exists
