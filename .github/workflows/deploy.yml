@@ -3,10 +3,8 @@ name: Deploy
 on:
   push:
     branches:
-    - 'master'
-    - 'zowe-v1-lts'
-    - 'lts-incremental'
-    - 'lts-stable'
+    - master
+    - 'zowe-v*-lts'
 
 jobs:
   deploy:
@@ -22,18 +20,22 @@ jobs:
         node-version: 12.x
 
     - name: Version
-      uses: tjohnsonBCM/zowe-deploy@semver-labels
+      uses: tjohnsonBCM/zowe-deploy@master
       with:
         changelog-header: '## Recent Changes'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     - run: npm pack
 
+    - uses: actions/upload-artifact@v2
+      with:
+        name: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
+
     - name: Publish
-      uses: tjohnsonBCM/zowe-deploy@semver-labels
+      uses: tjohnsonBCM/zowe-deploy@master
       with:
         github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
-        npm-email: 'timothy.johnson@broadcom.com'
+        npm-email: timothy.johnson@broadcom.com
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         skip-version: true
