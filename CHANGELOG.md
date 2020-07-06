@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.1.0`
 
 - def
 
