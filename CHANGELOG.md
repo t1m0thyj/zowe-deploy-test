@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Update GitHub workflow
+
 ## `1.1.10`
 
 - Test before demo

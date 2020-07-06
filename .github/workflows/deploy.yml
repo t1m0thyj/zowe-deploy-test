@@ -5,6 +5,8 @@ on:
     branches:
     - master
     - 'zowe-v*-lts'
+    - lts-incremental
+    - lts-stable
 
 jobs:
   deploy:
@@ -26,10 +28,6 @@ jobs:
         repo-token: ${{ secrets.GITHUB_TOKEN }}
 
     - run: npm pack
-
-    - uses: actions/upload-artifact@v2
-      with:
-        path: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
 
     - name: Publish
       uses: tjohnsonBCM/zowe-deploy@master
