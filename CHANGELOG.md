@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.1.6`
 
 - fix 4
 
