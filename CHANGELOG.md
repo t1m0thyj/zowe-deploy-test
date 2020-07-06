@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.1.12`
 
 - Skip GitHub publish if release already exists
 
