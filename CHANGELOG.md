@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Skip GitHub publish if release already exists
+
 ## `1.1.11`
 
 - Update GitHub workflow
