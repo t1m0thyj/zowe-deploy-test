@@ -21,11 +21,19 @@ jobs:
       with:
         node-version: 12.x
 
-    - name: Version and Publish
+    - name: Version
       uses: tjohnsonBCM/zowe-deploy@semver-labels
       with:
         changelog-header: '## Recent Changes'
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - run: npm pack
+
+    - name: Publish
+      uses: tjohnsonBCM/zowe-deploy@semver-labels
+      with:
         github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
         npm-email: 'timothy.johnson@broadcom.com'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        skip-version: true
