@@ -29,4 +29,3 @@ jobs:
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
         npm-email: 'timothy.johnson@broadcom.com'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        skip-version: true
