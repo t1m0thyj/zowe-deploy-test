@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.0`
 
 - Fix check if NPM package is already published
 
