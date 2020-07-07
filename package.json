@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.7"
+    "@zowe/perf-timing": "1.0.3"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
