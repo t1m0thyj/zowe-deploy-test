@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.3`
 
 - This is another test release for the demo :)
 
