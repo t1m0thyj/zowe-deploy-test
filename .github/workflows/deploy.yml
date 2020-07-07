@@ -10,6 +10,8 @@ on:
 
 jobs:
   deploy:
+    # Do not run this job on forks.
+    if: github.repository == 'tjohnsonBCM/zowe-deploy-test'
     runs-on: ubuntu-latest
 
     steps:
