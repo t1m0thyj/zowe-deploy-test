@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- abc
+
 ## `1.2.0`
 
 - Fix check if NPM package is already published
