@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.2`
 
 - This is a test release
 
