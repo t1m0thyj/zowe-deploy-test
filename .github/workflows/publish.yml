@@ -1,4 +1,4 @@
-name: Deploy
+name: Publish
 
 on:
   push:
@@ -28,6 +28,7 @@ jobs:
       with:
         changelog-header: '## Recent Changes'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
+        update-version: true
 
     - run: npm pack
 
@@ -38,4 +39,3 @@ jobs:
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
         npm-email: timothy.johnson@broadcom.com
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        skip-version: true
