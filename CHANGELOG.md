@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Try storing extra data in workflow YAML
+
 ## `1.2.4`
 
 - Use updated zowe-deploy GH action
