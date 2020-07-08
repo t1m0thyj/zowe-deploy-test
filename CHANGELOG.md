@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.4`
 
 - Use updated zowe-deploy GH action
 
