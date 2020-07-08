@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Use updated zowe-deploy GH action
+
 ## `1.2.3`
 
 - This is another test release for the demo :)
