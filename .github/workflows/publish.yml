@@ -36,6 +36,5 @@ jobs:
       uses: tjohnsonBCM/zowe-deploy@master
       with:
         github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
-        npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
-        npm-email: timothy.johnson@broadcom.com
+        npm-token: ${{ secrets.NPM_TOKEN }}
         repo-token: ${{ secrets.GITHUB_TOKEN }}
