@@ -29,7 +29,6 @@ jobs:
         changelog-header: '## Recent Changes'
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         update-version: true
-        config-file: ./.github/workflows/publish.yml
 
     - run: npm pack
 
@@ -40,28 +39,3 @@ jobs:
         npm-credentials: ${{ secrets.NPM_CREDENTIALS }}
         npm-email: timothy.johnson@broadcom.com
         repo-token: ${{ secrets.GITHUB_TOKEN }}
-        config-file: ./.github/workflows/publish.yml
-
-protectedBranches:
-  - name: master
-    tag: latest
-    level: major
-    dependencies:
-      "@zowe/perf-timing": latest
-    aliasTags:
-    - zowe-v1-lts
-  # - name: zowe-v1-lts
-  #   tag: zowe-v1-lts
-  #   level: minor
-  #   dependencies:
-  #     "@zowe/perf-timing": zowe-v1-lts
-  - name: lts-incremental
-    tag: lts-incremental
-    level: patch
-    dependencies:
-      "@zowe/perf-timing": lts-incremental
-  - name: lts-stable
-    tag: lts-stable
-    level: patch
-    dependencies:
-      "@zowe/perf-timing": lts-stable

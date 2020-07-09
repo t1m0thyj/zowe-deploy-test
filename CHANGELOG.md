@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- Try storing extra data in workflow YAML
+- This should say 1.2.5
 
 ## `1.2.4`
 
