@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.6`
 
 - This should say 1.2.6
 
