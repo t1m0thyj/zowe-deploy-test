@@ -23,18 +23,11 @@ jobs:
       with:
         node-version: 12.x
 
-    - name: Version
-      uses: tjohnsonBCM/zowe-deploy@master
+    - name: Version and Publish
+      uses: tjohnsonBCM/node-versioner@master
       with:
         changelog-header: '## Recent Changes'
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        update-version: true
-
-    - run: npm pack
-
-    - name: Publish
-      uses: tjohnsonBCM/zowe-deploy@master
-      with:
         github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-token: ${{ secrets.NPM_TOKEN }}
+        prepublish-cmd: npm pack
         repo-token: ${{ secrets.GITHUB_TOKEN }}
