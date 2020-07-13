@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- This should say 1.2.7
+
 ## `1.2.6`
 
 - This should say 1.2.6
