@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.2.8`
 
 - Use branch name wildcards and template expression in node-versioner-config.yml
 
