@@ -7,17 +7,12 @@ protectedBranches:
   aliasTags:
   - zowe-v1-lts
 # - name: zowe-v1-lts
-#   tag: zowe-v1-lts
+#   tag: ${name}
 #   level: minor
 #   dependencies:
-#     "@zowe/perf-timing": zowe-v1-lts
-- name: lts-incremental
-  tag: lts-incremental
+#     "@zowe/perf-timing": ${name}
+- name: 'lts-*'
+  tag: ${name}
   level: patch
   dependencies:
-    "@zowe/perf-timing": lts-incremental
-- name: lts-stable
-  tag: lts-stable
-  level: patch
-  dependencies:
-    "@zowe/perf-timing": lts-stable
+    "@zowe/perf-timing": ${name}

@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Use branch name wildcards and template expression in node-versioner-config.yml
+
 ## `1.2.7`
 
 - This should say 1.2.7
