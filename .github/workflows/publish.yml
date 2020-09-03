@@ -23,11 +23,20 @@ jobs:
       with:
         node-version: 12.x
 
+    # - name: Version and Publish
+    #   uses: tjohnsonBCM/node-versioner@master
+    #   with:
+    #     changelog-header: '## Recent Changes'
+    #     github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
+    #     npm-token: ${{ secrets.NPM_TOKEN }}
+    #     prepublish-cmd: npm pack
+    #     repo-token: ${{ secrets.GITHUB_TOKEN }}
+
     - name: Version and Publish
       uses: tjohnsonBCM/node-versioner@master
       with:
-        changelog-header: '## Recent Changes'
-        github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
+        # github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-token: ${{ secrets.NPM_TOKEN }}
-        prepublish-cmd: npm pack
+        # prepublish-cmd: npm pack
+        project-type: lerna
         repo-token: ${{ secrets.GITHUB_TOKEN }}
