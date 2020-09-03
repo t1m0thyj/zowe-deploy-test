@@ -1,6 +1,6 @@
 {
-  "name": "@tjohnsonbcm/zowe-deploy-test",
-  "version": "1.2.8",
+  "name": "@tjohnsonbcm/zowe-util-test",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.7"
-  },
-  "devDependencies": {
-    "lerna": "^3.22.1"
+    "lodash": "^4.17.20"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
