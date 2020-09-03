@@ -1,6 +1,6 @@
 {
   "name": "@tjohnsonbcm/zowe-cli-test",
-  "version": "1.0.0",
+  "version": "1.4.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.7",
-    "@tjohnsonbcm/zowe-sdk-test": "1.0.0"
+    "@tjohnsonbcm/zowe-sdk-test": "1.4.0",
+    "@zowe/perf-timing": "1.0.7"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
