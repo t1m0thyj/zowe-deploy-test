@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- trying lerna A
+- trying lerna AB
 
 ## `1.2.8`
 
