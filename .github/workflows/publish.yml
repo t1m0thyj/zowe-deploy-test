@@ -43,4 +43,4 @@ jobs:
         npm-token: ${{ secrets.NPM_TOKEN }}
         # prepublish-cmd: npm pack
         project-type: lerna
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        repo-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
