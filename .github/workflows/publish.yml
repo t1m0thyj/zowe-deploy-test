@@ -38,9 +38,14 @@ jobs:
     #     prepublish-cmd: npm pack
     #     repo-token: ${{ secrets.GITHUB_TOKEN }}
 
+    - run: npx lerna bootstrap
+
+    - run: lerna run build
+
     - name: Version and Publish
       uses: tjohnsonBCM/node-versioner@master
       with:
+        changelog-header: '## Recent Changes'
         # github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
         npm-token: ${{ secrets.NPM_TOKEN }}
         # prepublish-cmd: npm pack
