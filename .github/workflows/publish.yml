@@ -40,7 +40,7 @@ jobs:
 
     - run: npx lerna bootstrap
 
-    - run: lerna run build
+    - run: npx lerna run build
 
     - name: Version and Publish
       uses: tjohnsonBCM/node-versioner@master
