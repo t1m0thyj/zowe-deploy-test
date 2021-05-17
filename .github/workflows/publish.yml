@@ -28,7 +28,7 @@ jobs:
     # - run: npm ci
     - run: npm install
 
-    - run: npm run build
+    # - run: npm run build
 
     # - name: Version and Publish
     #   uses: t1m0thyj/node-versioner@master
