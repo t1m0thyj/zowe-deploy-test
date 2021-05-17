@@ -1,5 +1,5 @@
 {
-  "name": "@tjohnsonbcm/zowe-deploy-test",
+  "name": "@t1m0thyj/zowe-deploy-test",
   "version": "1.2.8",
   "description": "",
   "main": "index.js",
@@ -19,6 +19,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tjohnsonBCM/zowe-deploy-test.git"
+    "url": "git://github.com/t1m0thyj/zowe-deploy-test.git"
   }
 }

@@ -11,7 +11,7 @@ on:
 jobs:
   publish:
     # Do not run this job on forks.
-    if: github.repository == 'tjohnsonBCM/zowe-deploy-test'
+    if: github.repository == 't1m0thyj/zowe-deploy-test'
     runs-on: ubuntu-latest
 
     steps:
@@ -30,10 +30,10 @@ jobs:
     # - run: npm run build
 
     # - name: Version and Publish
-    #   uses: tjohnsonBCM/node-versioner@master
+    #   uses: t1m0thyj/node-versioner@master
     #   with:
     #     changelog-header: '## Recent Changes'
-    #     github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
+    #     github-artifacts: 't1m0thyj-zowe-deploy-test-*.tgz'
     #     npm-token: ${{ secrets.NPM_TOKEN }}
     #     prepublish-cmd: npm pack
     #     repo-token: ${{ secrets.GITHUB_TOKEN }}
@@ -43,10 +43,10 @@ jobs:
     - run: npx lerna run build
 
     - name: Version and Publish
-      uses: tjohnsonBCM/node-versioner@master
+      uses: t1m0thyj/node-versioner@master
       with:
         changelog-header: '## Recent Changes'
-        # github-artifacts: 'tjohnsonbcm-zowe-deploy-test-*.tgz'
+        # github-artifacts: 't1m0thyj-zowe-deploy-test-*.tgz'
         npm-token: ${{ secrets.NPM_TOKEN }}
         # prepublish-cmd: npm pack
         project-type: lerna
