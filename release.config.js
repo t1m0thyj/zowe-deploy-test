@@ -36,6 +36,6 @@ module.exports = {
     plugins: [
         "semantic-release-zowe-cli",
         "@semantic-release/npm",
-        "@semantic-release/git"
+        "@semantic-release/github"
     ]
 };
