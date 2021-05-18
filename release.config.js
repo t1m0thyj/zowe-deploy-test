@@ -27,7 +27,12 @@ module.exports = {
     ],
     plugins: [
         "semantic-release-zowe-cli",
-        "@semantic-release/npm",
+        ["@semantic-release/npm", {
+            "tarballDir": "dist"
+        }],
+        ["@semantic-release/github", {
+            "assets": "dist/*.tgz"
+        }],
         "@semantic-release/git"
     ]
 };
@@ -38,7 +43,7 @@ module.exports = {
     branches: [
         {
             name: "master",
-            range: "6.x",
+            level: "minor",
             dependencies: [
                 "@zowe/imperative",
                 "@zowe/perf-timing"
@@ -57,14 +62,14 @@ module.exports = {
         },
         {
             name: "lts-incremental",
-            range: "2.36.x",
+            level: "patch",
             dependencies: [
                 "@brightside/imperative"
             ]
         },
         {
             name: "lts-stable",
-            range: "1.0.x",
+            level: "patch",
             dependencies: [
                 "@brightside/imperative"
             ]
