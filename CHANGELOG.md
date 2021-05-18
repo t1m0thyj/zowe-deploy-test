@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.6.0`
 
 - some stuff
 - some less stuff
