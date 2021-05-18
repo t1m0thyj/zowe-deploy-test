@@ -2,6 +2,7 @@ module.exports = {
     branches: [
         {
             name: "master",
+            accept: ["minor", "patch"],
             dependencies: [
                 "@zowe/imperative",
                 "@zowe/perf-timing"
@@ -36,6 +37,6 @@ module.exports = {
     plugins: [
         "semantic-release-zowe-cli",
         "@semantic-release/npm",
-        "@semantic-release/github"
+        "@semantic-release/git"
     ]
 };
