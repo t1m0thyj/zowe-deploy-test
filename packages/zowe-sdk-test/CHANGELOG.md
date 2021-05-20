@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.1`
 
 - this is old
 - this is new
