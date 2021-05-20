@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- in all its beauty
+- like you do too
+
 ## `1.7.3`
 
 - this be apple
