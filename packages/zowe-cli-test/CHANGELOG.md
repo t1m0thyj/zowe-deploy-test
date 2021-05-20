@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.0`
 
 - this is random
 - this is not

@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.0`
 
 - fix a bug
 - create another one
