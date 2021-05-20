@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.7"
+    "@zowe/perf-timing": "1.0.6"
   },
   "devDependencies": {
     "@semantic-release/git": "^9.0.0",

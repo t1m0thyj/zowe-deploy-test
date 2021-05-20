@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- this is hot
+- this is cold
+
 ## `1.7.0`
 
 - this is random
