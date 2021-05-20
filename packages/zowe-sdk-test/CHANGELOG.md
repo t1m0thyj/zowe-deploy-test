@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.6`
 
 - only me this time
 

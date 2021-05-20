@@ -1,6 +1,6 @@
 {
   "name": "@t1m0thyj/zowe-sdk-test",
-  "version": "1.7.5",
+  "version": "1.7.6",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@t1m0thyj/zowe-util-test": "1.7.5",
+    "@t1m0thyj/zowe-util-test": "1.7.6",
     "@zowe/perf-timing": "1.0.7"
   },
   "publishConfig": {
