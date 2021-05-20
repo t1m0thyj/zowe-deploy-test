@@ -1,17 +1,20 @@
 {
-  "name": "@t1m0thyj/zowe-cli-test",
+  "name": "@t1m0thyj/zowe-deploy-test",
   "version": "1.6.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "echo \"Nothing to build\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@t1m0thyj/zowe-sdk-test": "1.6.1",
     "@zowe/perf-timing": "1.0.7"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
+    "semantic-release": "^17.4.3",
+    "semantic-release-zowe-cli": "github:t1m0thyj/semantic-release-zowe-cli"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
