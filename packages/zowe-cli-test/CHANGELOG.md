@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.3`
 
 - this be purple
 - this be green
