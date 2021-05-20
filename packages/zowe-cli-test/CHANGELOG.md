@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- this is purple
+- this is green
+
 ## `1.7.1`
 
 - this is hot

@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- this is CLI
+- this is GUI
+
 ## `1.7.1`
 
 - this is red
