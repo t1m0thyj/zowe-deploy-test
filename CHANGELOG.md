@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- hello
+- goodbye
+
 ## `1.6.0`
 
 - some stuff
