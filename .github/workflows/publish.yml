@@ -28,6 +28,8 @@ jobs:
     # - run: npm ci
     - run: npm install
 
+    - uses: t1m0thyj/update-npm-deps@master
+
     # - run: npm run build
 
     # - name: Version and Publish
