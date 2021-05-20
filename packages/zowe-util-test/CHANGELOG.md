@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- this is red
+- this is blue
+
 ## `1.7.0`
 
 - fix a bug
