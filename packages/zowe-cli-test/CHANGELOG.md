@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.4`
 
 - i want to see changelog
 - oh yes i do

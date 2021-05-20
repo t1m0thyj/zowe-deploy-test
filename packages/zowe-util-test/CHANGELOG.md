@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.4`
 
 - but if this fails
 - that's nothing new

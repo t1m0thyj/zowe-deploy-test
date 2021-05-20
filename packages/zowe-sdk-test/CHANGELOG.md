@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.4`
 
 - in all its beauty
 - like you do too
