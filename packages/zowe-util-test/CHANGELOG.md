@@ -2,8 +2,8 @@
 
 ## Recent Changes
 
-- this is CLI
-- this is GUI
+- this be CLI
+- this be GUI
 
 ## `1.7.1`
 
