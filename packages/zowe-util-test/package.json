@@ -1,6 +1,6 @@
 {
   "name": "@t1m0thyj/zowe-util-test",
-  "version": "1.5.3",
+  "version": "1.6.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.21"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

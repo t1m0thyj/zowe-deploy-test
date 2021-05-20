@@ -1,5 +1,10 @@
 # Changelog
 
+## Recent Changes
+
+- fix a bug
+- create another one
+
 ## `1.5.3`
 
 - more random stuff
