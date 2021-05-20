@@ -33,7 +33,9 @@ module.exports = {
     //     ["@semantic-release/github", {
     //         assets: "dist/*.tgz"
     //     }],
-    //     "@semantic-release/git"
+    //     ["@semantic-release/git", {
+    //         message: "Release ${nextRelease.version} to ${branch.name} [skip ci]\n\nSigned-off-by: <% process.env.GIT_COMMITTER_NAME %> <<% process.env.GIT_COMMITTER_EMAIL %>>"
+    //     }]
     // ]
     plugins: [
         "semantic-release-zowe-cli",
@@ -50,7 +52,8 @@ module.exports = {
                 "package-lock.json",
                 "packages/*/CHANGELOG.md",
                 "packages/*/package.json"
-            ]
+            ],
+            message: "Release ${nextRelease.version} to ${branch.name} [skip ci]\n\nSigned-off-by: <% process.env.GIT_COMMITTER_NAME %> <<% process.env.GIT_COMMITTER_EMAIL %>>"
         }]
     ]
 };
