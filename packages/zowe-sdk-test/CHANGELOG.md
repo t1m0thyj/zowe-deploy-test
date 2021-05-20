@@ -2,8 +2,8 @@
 
 ## Recent Changes
 
-- this is apple
-- this is orange
+- this be apple
+- this be orange
 
 ## `1.7.1`
 

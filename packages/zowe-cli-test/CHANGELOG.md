@@ -2,8 +2,8 @@
 
 ## Recent Changes
 
-- this is purple
-- this is green
+- this be purple
+- this be green
 
 ## `1.7.1`
 

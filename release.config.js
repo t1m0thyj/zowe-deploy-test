@@ -25,16 +25,33 @@ module.exports = {
             ]
         }
     ],
+    // plugins: [
+    //     "semantic-release-zowe-cli",
+    //     ["@semantic-release/npm", {
+    //         tarballDir: "dist"
+    //     }],
+    //     ["@semantic-release/github", {
+    //         assets: "dist/*.tgz"
+    //     }],
+    //     "@semantic-release/git"
+    // ]
     plugins: [
         "semantic-release-zowe-cli",
-        // ["@semantic-release/npm", {
         ["semantic-release-lerna", {
-            "tarballDir": "dist"
+            tarballDir: "dist"
         }],
         ["@semantic-release/github", {
-            "assets": "dist/*.tgz"
+            assets: "dist/*.tgz"
         }],
-        "@semantic-release/git"
+        ["@semantic-release/git", {
+            assets: [
+                "lerna.json",
+                "package.json",
+                "package-lock.json",
+                "packages/*/CHANGELOG.md",
+                "packages/*/package.json"
+            ]
+        }]
     ]
 };
 
