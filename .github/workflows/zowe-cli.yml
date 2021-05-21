@@ -42,7 +42,7 @@ jobs:
 
     - name: Update NPM Dependencies
       id: update
-    - uses: t1m0thyj/update-npm-deps@master
+      uses: t1m0thyj/update-npm-deps@master
 
     - name: Build Source
       id: build
