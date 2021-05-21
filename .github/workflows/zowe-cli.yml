@@ -54,7 +54,7 @@ jobs:
 
   publish:
     # Do not run this job on forks or when PR is opened.
-    if: (github.repository == 't1m0thyj/zowe-deploy-test' && github.event.pull_request.action == 'closed')
+    if: (github.repository == 't1m0thyj/zowe-deploy-test' && github.event.pull_request.action == 'closed' && github.event.pull_request.merged)
     runs-on: ubuntu-latest
 
     steps:
