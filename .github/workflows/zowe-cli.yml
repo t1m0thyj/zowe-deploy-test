@@ -80,7 +80,7 @@ jobs:
     - run: npm run build --if-present
 
     - name: Semantic Release
-      run: npx semantic-release
+      run: npx semantic-release-zowe-cli
       env:
         GIT_AUTHOR_NAME: zowe-robot
         GIT_AUTHOR_EMAIL: zowe.robot@gmail.com
