@@ -34,7 +34,7 @@ module.exports = {
     //         assets: "dist/*.tgz"
     //     }],
     //     ["@semantic-release/git", {
-    //         message: "Bump version to ${nextRelease.version} [skip ci]\n\nSigned-off-by: <%= process.env.GIT_COMMITTER_NAME %> <<%= process.env.GIT_COMMITTER_EMAIL %>>"
+    //         message: "Bump version to ${nextRelease.version} [ci skip"
     //     }]
     // ]
     plugins: [
@@ -53,10 +53,9 @@ module.exports = {
                 "packages/*/CHANGELOG.md",
                 "packages/*/package.json"
             ],
-            message: "Bump version to ${nextRelease.version} [skip ci]\n\nSigned-off-by: <%= process.env.GIT_COMMITTER_NAME %> <<%= process.env.GIT_COMMITTER_EMAIL %>>"
+            message: "Bump version to ${nextRelease.version} [ci skip]"
         }]
-    ],
-    tagAnnotate: true
+    ]
 };
 
 /*

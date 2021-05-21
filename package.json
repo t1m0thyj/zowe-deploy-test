@@ -14,7 +14,7 @@
   "devDependencies": {
     "@semantic-release/git": "^9.0.0",
     "lerna": "^4.0.0",
-    "semantic-release": "github:DiogoAbu/semantic-release#feat/annotate-sign-tag",
+    "semantic-release": "^17.4.3",
     "semantic-release-lerna": "github:t1m0thyj/semantic-release-lerna#lerna",
     "semantic-release-zowe-cli": "github:t1m0thyj/semantic-release-zowe-cli"
   },
