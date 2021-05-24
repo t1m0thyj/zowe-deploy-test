@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.7`
 
 - its me again
 - i love to change
