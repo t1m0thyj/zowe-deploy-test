@@ -12,11 +12,7 @@
     "@zowe/perf-timing": "1.0.7"
   },
   "devDependencies": {
-    "@semantic-release/git": "^9.0.0",
-    "lerna": "^4.0.0",
-    "semantic-release": "^17.4.3",
-    "semantic-release-lerna": "github:t1m0thyj/semantic-release-lerna#lerna",
-    "semantic-release-zowe-cli": "github:t1m0thyj/semantic-release-zowe-cli"
+    "lerna": "^4.0.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

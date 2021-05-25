@@ -37,24 +37,9 @@ module.exports = {
     //         message: "Bump version to ${nextRelease.version} [ci skip"
     //     }]
     // ]
-    plugins: [
-        "semantic-release-zowe-cli",
-        ["semantic-release-lerna", {
-            tarballDir: "dist"
-        }],
-        ["@semantic-release/github", {
-            assets: "dist/*.tgz"
-        }],
-        ["@semantic-release/git", {
-            assets: [
-                "lerna.json",
-                "package.json",
-                "package-lock.json",
-                "packages/*/CHANGELOG.md",
-                "packages/*/package.json"
-            ],
-            message: "Bump version to ${nextRelease.version} [ci skip]"
-        }]
+    publishConfig: [
+        "lerna",
+        "github"
     ]
 };
 
