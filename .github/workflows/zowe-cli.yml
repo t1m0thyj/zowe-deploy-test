@@ -77,8 +77,8 @@ jobs:
 
     - name: Semantic Release
       uses: t1m0thyj/node-versioner@master
-      env:
-        GIT_COMMITTER_NAME: zowe-robot
-        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
-        GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      with:
+        git-committer-name: zowe-robot
+        git-committer-email: zowe.robot@gmail.com
+        github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+        npm-token: ${{ secrets.NPM_TOKEN }}
