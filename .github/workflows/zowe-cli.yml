@@ -3,7 +3,7 @@ name: Zowe CLI CI
 on: [push, pull_request]
 
 jobs:
-  test:
+  build:
     if: (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository) && !contains(github.event.head_commit.message, '[ci skip]')
     runs-on: ${{ matrix.os }}
 
@@ -37,6 +37,11 @@ jobs:
     - name: Update NPM Dependencies
       id: update
       uses: t1m0thyj/update-npm-deps@master
+      env:
+        GIT_COMMITTER_NAME: zowe-robot
+        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
+      with:
+        commit: ${{ github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' }}
 
     - name: Build Source
       id: build
