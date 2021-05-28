@@ -3,7 +3,7 @@ name: Zowe CLI CI
 on: [push, pull_request]
 
 jobs:
-  test:
+  build:
     if: (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository) && !contains(github.event.head_commit.message, '[ci skip]')
     runs-on: ${{ matrix.os }}
 
@@ -39,6 +39,11 @@ jobs:
     - name: Update NPM Dependencies
       id: update
       uses: t1m0thyj/update-npm-deps@master
+      env:
+        GIT_COMMITTER_NAME: zowe-robot
+        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
+      with:
+        commit: ${{ github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' }}
 
     - name: Build Source
       id: build
@@ -47,35 +52,10 @@ jobs:
     - name: Unit Tests
       id: test
       run: npm run test || true
-
-  publish:
-    if: github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' && !contains(github.event.head_commit.message, '[ci skip]')
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Use Node.js 12.x
-      uses: actions/setup-node@v2
-      with:
-        node-version: 12.x
     
-    - name: Use NPM v7
-      run: npm install -g npm@^7
-
-    - run: npm ci
-
-    - uses: t1m0thyj/update-npm-deps@master
-      env:
-        GIT_COMMITTER_NAME: zowe-robot
-        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
-      with:
-        commit: true
-
-    - run: npm run build --if-present
-
-    - name: Semantic Release
+    - name: Publish Changes
+      id: publish
+      if: ${{ github.repository == 't1m0thyj/zowe-deploy-test' && steps.update.outputs.publish == 'true' }}
       uses: t1m0thyj/node-versioner@master
       with:
         git-committer-name: zowe-robot
