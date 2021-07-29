@@ -1,6 +1,6 @@
 {
   "name": "@t1m0thyj/zowe-deploy-test",
-  "private": true,
+  "version": "1.6.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,17 +11,11 @@
   "dependencies": {
     "@zowe/perf-timing": "1.0.7"
   },
-  "devDependencies": {
-    "lerna": "^4.0.0"
-  },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/t1m0thyj/zowe-deploy-test.git"
-  },
-  "workspaces": [
-    "packages/*"
-  ]
+  }
 }
