@@ -1,7 +1,7 @@
 module.exports = {
     branches: [
         {
-            name: "master",
+            name: "lerna",
             level: "minor",
             dependencies: [
                 "@zowe/perf-timing"
