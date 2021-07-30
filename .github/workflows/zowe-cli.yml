@@ -36,12 +36,9 @@ jobs:
 
     - name: Update NPM Dependencies
       id: update
-      uses: t1m0thyj/update-npm-deps@master
-      env:
-        GIT_COMMITTER_NAME: zowe-robot
-        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
+      uses: t1m0thyj/node-versioner@master
       with:
-        commit: ${{ github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' }}
+        actions: update
 
     - name: Build Source
       id: build
@@ -60,6 +57,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - run: git pull --no-rebase --no-tags
+
     - name: Use Node.js 12.x
       uses: actions/setup-node@v2
       with:
@@ -72,22 +71,28 @@ jobs:
     - run: npm ci
       id: install
 
-    - uses: t1m0thyj/update-npm-deps@master
+    - uses: t1m0thyj/node-versioner@master
       id: update
-      env:
-        GIT_COMMITTER_NAME: zowe-robot
-        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
       with:
-        commit: true
+        actions: update
+        commit-updates: true
+        git-committer-name: zowe-robot
+        git-committer-email: zowe.robot@gmail.com
 
     - run: npm run build --if-present
       id: build
 
-    - name: Publish Changes
-      id: publish
-      uses: t1m0thyj/node-versioner@master
+    - uses: t1m0thyj/node-versioner@master
+      id: version
       with:
+        actions: version
         git-committer-name: zowe-robot
         git-committer-email: zowe.robot@gmail.com
+        github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+
+    - uses: t1m0thyj/node-versioner@master
+      id: publish
+      with:
+        actions: publish
         github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
         npm-token: ${{ secrets.NPM_TOKEN }}

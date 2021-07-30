@@ -2,6 +2,7 @@ module.exports = {
     branches: [
         {
             name: "lerna",
+            tag: "latest",
             level: "minor",
             dependencies: [
                 "@zowe/perf-timing"
