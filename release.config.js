@@ -26,13 +26,15 @@ module.exports = {
             ]
         }
     ],
-    publishConfig: [
-        ["npm", {
+    plugins: [
+        "_changelog",
+        ["_lerna", {
             tarballDir: "dist"
         }],
-        ["github", {
+        ["_github", {
             assets: "dist/*.tgz"
-        }]
+        }],
+        "_git"
     ]
 };
 
