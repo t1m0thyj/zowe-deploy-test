@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.8`
 
 - Retry semantic-release approach
 
