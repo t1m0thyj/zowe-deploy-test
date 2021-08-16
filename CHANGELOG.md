@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- First try releasing with custom plugins
+
 ## `1.7.8`
 
 - Retry semantic-release approach
