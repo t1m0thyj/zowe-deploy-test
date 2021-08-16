@@ -25,12 +25,16 @@ module.exports = {
             ]
         }
     ],
-    publishConfig: [
-        ["npm", {
+    plugins: [
+        "semantic-release-zowe-cli",
+        ["@semantic-release/npm", {
             tarballDir: "dist"
         }],
-        ["github", {
+        ["@semantic-release/github", {
             assets: "dist/*.tgz"
+        }],
+        ["@semantic-release/git", {
+            assets: ["CHANGELOG.md", "package.json", "package-lock.json"]
         }]
     ]
 };

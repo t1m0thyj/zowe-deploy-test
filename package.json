@@ -17,5 +17,10 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/t1m0thyj/zowe-deploy-test.git"
+  },
+  "devDependencies": {
+    "@semantic-release/git": "^9.0.0",
+    "semantic-release": "^17.4.5",
+    "semantic-release-zowe-cli": "github:t1m0thyj/semantic-release-zowe-cli"
   }
 }
