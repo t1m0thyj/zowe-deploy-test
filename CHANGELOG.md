@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Test after monorepo restructure
+
 ## `1.7.9`
 
 - First try releasing with custom plugins
