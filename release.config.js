@@ -23,7 +23,7 @@ module.exports = {
         }],
         ["./octorelease/packages/github", {
             assets: "dist/*.tgz",
-            checkPrLabel: true
+            checkPrLabels: true
         }],
         "./octorelease/packages/git"
     ]
