@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.7.9`
 
 - Test after monorepo restructure
 
