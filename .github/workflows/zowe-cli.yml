@@ -20,7 +20,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -57,7 +57,8 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    # - run: git pull --no-rebase --no-tags
+    # Pull down any commits since last run
+    - run: git pull --no-rebase --no-tags
 
     - name: Use Node.js 12.x
       uses: actions/setup-node@v2
@@ -96,6 +97,15 @@ jobs:
     #     actions: publish
     #     github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
     #     npm-token: ${{ secrets.NPM_TOKEN }}
+
+    - name: Checkout Octorelease
+      uses: actions/checkout@v2
+      with:
+        repository: t1m0thyj/node-versioner
+        path: octorelease
+
+    - name: Build Plugins
+      run: cd octorelease && npm ci && npm run build
 
     - uses: t1m0thyj/node-versioner@master
       env:

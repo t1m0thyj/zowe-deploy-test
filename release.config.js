@@ -2,38 +2,30 @@ module.exports = {
     branches: [
         {
             name: "master",
-            level: "minor",
-            dependencies: [
-                "@zowe/perf-timing"
-            ],
-            aliasTags: [
-                "zowe-v1-lts"
-            ]
+            level: "minor"
         },
         {
             name: "next",
-            prerelease: true,
-            dependencies: {
-                "@zowe/perf-timing": "latest"
-            }
+            prerelease: true
         },
         {
             name: "lts-*",
-            level: "patch",
-            dependencies: [
-                "@brightside/imperative"
-            ]
+            level: "patch"
         }
     ],
     plugins: [
-        "_changelog",
-        ["_npm", {
+        "./octorelease/packages/changelog",
+        ["./octorelease/packages/npm", {
+            aliasTags: {
+                "latest": "zowe-v1-lts"
+            },
             tarballDir: "dist"
         }],
-        ["_github", {
-            assets: "dist/*.tgz"
+        ["./octorelease/packages/github", {
+            assets: "dist/*.tgz",
+            checkPrLabel: true
         }],
-        "_git"
+        "./octorelease/packages/git"
     ]
 };
 
