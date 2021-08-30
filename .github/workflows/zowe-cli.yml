@@ -83,21 +83,6 @@ jobs:
     - run: npm run build --if-present
       id: build
 
-    # - uses: t1m0thyj/node-versioner@master
-    #   id: version
-    #   with:
-    #     actions: version
-    #     git-committer-name: zowe-robot
-    #     git-committer-email: zowe.robot@gmail.com
-    #     github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-
-    # - uses: t1m0thyj/node-versioner@master
-    #   id: publish
-    #   with:
-    #     actions: publish
-    #     github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-    #     npm-token: ${{ secrets.NPM_TOKEN }}
-
     - name: Checkout Octorelease
       uses: actions/checkout@v2
       with:
@@ -107,7 +92,7 @@ jobs:
     - name: Build Plugins
       run: cd octorelease && npm ci && npm run build
 
-    - uses: t1m0thyj/node-versioner@master
+    - uses: t1m0thyj/octorelease@master
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com

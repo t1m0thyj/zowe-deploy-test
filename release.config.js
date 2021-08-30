@@ -19,6 +19,7 @@ module.exports = {
             aliasTags: {
                 "latest": "zowe-v1-lts"
             },
+            smokeTest: true,
             tarballDir: "dist"
         }],
         ["./octorelease/packages/github", {
