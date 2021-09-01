@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.8.0`
 
 - Add hello world script
 
