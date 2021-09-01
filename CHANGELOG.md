@@ -1,16 +1,8 @@
 # Changelog
 
-## `1.7.9`
+## Recent Changes
 
-- Test after monorepo restructure
-
-## `1.7.9`
-
-- First try releasing with custom plugins
-
-## `1.7.8`
-
-- Retry semantic-release approach
+- Add hello world script
 
 ## `1.0.0`
 
