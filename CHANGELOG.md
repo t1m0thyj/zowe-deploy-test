@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Test new GitHub release label workflow
+
 ## `1.8.0`
 
 - Add hello world script
