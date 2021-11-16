@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- Test new GitHub release label workflow
+- Test new GitHub release label workflow x2
 
 ## `1.8.0`
 
