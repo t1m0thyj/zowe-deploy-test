@@ -49,25 +49,20 @@ jobs:
       run: npm run test || true
 
   publish:
-    if: github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' && !contains(github.event.head_commit.message, '[ci skip]')
+    if: github.event_name == 'push' && !contains(github.event.head_commit.message, '[ci skip]')
     needs: test
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
 
-    # Pull down any commits since last run
-    - run: git pull --no-rebase --no-tags
-
-    - name: Use Node.js 12.x
+    - name: Use Node.js LTS
       uses: actions/setup-node@v2
       with:
-        node-version: 12.x
-
-    - name: Use NPM v7
-      id: npm7
-      run: npm install -g npm@^7
+        node-version: 'lts/*'
 
     - run: npm ci
       id: install
@@ -86,7 +81,7 @@ jobs:
     - name: Checkout Octorelease
       uses: actions/checkout@v2
       with:
-        repository: t1m0thyj/node-versioner
+        repository: t1m0thyj/octorelease
         path: octorelease
 
     - name: Build Plugins

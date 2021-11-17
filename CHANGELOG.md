@@ -1,6 +1,6 @@
 # Changelog
 
-## `1.8.0`
+## Recent Changes
 
 - Test new GitHub release label workflow x4
 
