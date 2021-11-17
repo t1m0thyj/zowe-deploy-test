@@ -2,7 +2,7 @@
 
 ## `1.8.0`
 
-- Test new GitHub release label workflow x3
+- Test new GitHub release label workflow x4
 
 ## `1.8.0`
 
