@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.8.4`
 
 - Move to Octorelease org
 
