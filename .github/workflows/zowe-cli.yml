@@ -81,13 +81,13 @@ jobs:
     - name: Checkout Octorelease
       uses: actions/checkout@v2
       with:
-        repository: t1m0thyj/octorelease
+        repository: octorelease/octorelease
         path: octorelease
 
     - name: Build Plugins
       run: cd octorelease && npm ci && npm run build
 
-    - uses: t1m0thyj/octorelease@master
+    - uses: octorelease/octorelease@master
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
