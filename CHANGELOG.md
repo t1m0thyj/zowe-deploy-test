@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Bump version for demo
+
 ## `1.8.4`
 
 - Move to Octorelease org
