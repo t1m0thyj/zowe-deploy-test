@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.8.6`
 
 - Try to load plugins faster
 
