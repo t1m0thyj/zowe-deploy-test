@@ -79,14 +79,14 @@ jobs:
     - run: npm run build --if-present
       id: build
 
-    - name: Checkout Octorelease
-      uses: actions/checkout@v2
-      with:
-        repository: octorelease/octorelease
-        path: octorelease
+    # - name: Checkout Octorelease
+    #   uses: actions/checkout@v2
+    #   with:
+    #     repository: octorelease/octorelease
+    #     path: octorelease
 
-    - name: Build Plugins
-      run: cd octorelease && npm ci && npm run build
+    # - name: Build Plugins
+    #   run: cd octorelease && npm ci && npm run build
 
     - uses: octorelease/octorelease@master
       env:

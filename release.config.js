@@ -14,18 +14,18 @@ module.exports = {
         }
     ],
     plugins: [
-        "./octorelease/packages/changelog",  // @octorelease/changelog
-        ["./octorelease/packages/npm", {     // @octorelease/npm
+        "@octorelease/changelog",
+        ["@octorelease/npm", {
             aliasTags: {
                 "latest": "zowe-v1-lts"
             },
             smokeTest: true,
             tarballDir: "dist"
         }],
-        ["./octorelease/packages/github", {  // @octorelease/github
+        ["@octorelease/github", {
             assets: "dist/*.tgz",
             checkPrLabels: true
         }],
-        "./octorelease/packages/git"         // @octorelease/git
+        "@octorelease/git"
     ]
 };
