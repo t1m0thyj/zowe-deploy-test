@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Test for demo dry run
+
 ## `1.8.6`
 
 - Try to load plugins faster
