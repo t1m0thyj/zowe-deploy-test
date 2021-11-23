@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.8.7`
 
 - Test for demo dry run
 
