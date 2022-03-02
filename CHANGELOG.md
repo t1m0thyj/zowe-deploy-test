@@ -1,5 +1,9 @@
 # Changelog
 
+## `1.8.8`
+
+- Test for live demo
+
 ## `1.8.7`
 
 - Test for demo dry run
