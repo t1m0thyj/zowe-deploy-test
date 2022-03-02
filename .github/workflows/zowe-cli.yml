@@ -71,7 +71,14 @@ jobs:
     - run: npm run build --if-present
       id: build
 
-    - uses: octorelease/octorelease@master
+    # - uses: octorelease/octorelease@master
+    #   env:
+    #     GIT_COMMITTER_NAME: zowe-robot
+    #     GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
+    #     GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+    #     NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+    - run: bash semantic-release.sh
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
