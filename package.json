@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.7"
+    "@zowe/imperative": "5.0.0"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
@@ -17,10 +17,5 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/t1m0thyj/zowe-deploy-test.git"
-  },
-  "devDependencies": {
-    "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^19.0.2",
-    "semantic-release-zowe-cli": "github:t1m0thyj/semantic-release-zowe-cli"
   }
 }
