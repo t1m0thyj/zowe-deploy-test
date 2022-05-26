@@ -10,7 +10,7 @@ jobs:
       result: ${{ steps.run-script.outputs.result }}
 
     steps:
-    - run: actions/github-script@v6
+    - uses: actions/github-script@v6
       id: run-script
       with:
         script: |
