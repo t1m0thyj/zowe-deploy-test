@@ -3,8 +3,35 @@ name: Zowe CLI CI
 on: [push, pull_request]
 
 jobs:
+  ci-skip:
+    runs-on: ubuntu-latest
+
+    outputs:
+      result: ${{ steps.run-script.outputs.result }}
+
+    steps:
+    - run: actions/github-script@v6
+      id: run-script
+      with:
+        script: |
+          if (context.eventName == "pull_request") return
+          const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+            ...context.repo,
+            commit_sha: context.sha
+            state: "open"
+          })
+          if (prs.data.length > 0) {
+            await github.rest.checks.update({
+              ...context.repo,
+              check_run_id: context.runId,
+              conclusion: "neutral"
+            })
+          }
+          return prs.data.length > 0
+
   test:
-    if: (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository) && !contains(github.event.head_commit.message, '[ci skip]')
+    if: needs.ci-skip.outputs.result != 'true' && !contains(github.event.head_commit.message, '[ci skip]')
+    needs: ci-skip
     runs-on: ${{ matrix.os }}
 
     strategy:
