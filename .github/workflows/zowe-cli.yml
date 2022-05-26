@@ -22,9 +22,14 @@ jobs:
             state: "open"
           })
           if (prs.data.length > 0) {
+            const jobs = await github.rest.actions.listJobsForWorkflowRun({
+              ...context.repo,
+              run_id: context.runId
+            })
+            console.log(JSON.stringify(jobs.data))
             await github.rest.checks.update({
               ...context.repo,
-              check_run_id: context.runId,
+              check_run_id: jobs.data.jobs.find(job => job.name === "ci-skip").id,
               conclusion: "neutral"
             })
           }
