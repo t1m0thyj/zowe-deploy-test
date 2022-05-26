@@ -3,40 +3,8 @@ name: Zowe CLI CI
 on: [push, pull_request]
 
 jobs:
-  ci-skip:
-    runs-on: ubuntu-latest
-
-    outputs:
-      result: ${{ steps.run-script.outputs.result }}
-
-    steps:
-    - uses: actions/github-script@v6
-      id: run-script
-      with:
-        result-encoding: string
-        script: |
-          if (context.eventName === "pull_request") return false
-          const prs = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-            ...context.repo,
-            commit_sha: context.sha,
-            state: "open"
-          })
-          if (prs.data.length > 0) {
-            const jobs = await github.rest.actions.listJobsForWorkflowRun({
-              ...context.repo,
-              run_id: context.runId
-            })
-            await github.rest.checks.update({
-              ...context.repo,
-              check_run_id: jobs.data.jobs.find(job => job.name === "ci-skip").run_id,
-              conclusion: "neutral"
-            })
-          }
-          return prs.data.length > 0
-
   test:
-    if: needs.ci-skip.outputs.result != 'true' && !contains(github.event.head_commit.message, '[ci skip]')
-    needs: ci-skip
+    if: (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository) && !contains(github.event.head_commit.message, '[ci skip]')
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -71,7 +39,7 @@ jobs:
       run: npm run test || true
 
   release:
-    if: github.event_name == 'push' && !contains(github.event.head_commit.message, '[ci skip]')
+    if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
 
