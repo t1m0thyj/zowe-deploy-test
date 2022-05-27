@@ -1,40 +1,9 @@
-// module.exports = {
-//     branches: [
-//         {
-//             name: "master",
-//             level: "minor"
-//         },
-//         {
-//             name: "next",
-//             prerelease: true
-//         },
-//         {
-//             name: "lts-*",
-//             level: "patch"
-//         }
-//     ],
-//     plugins: [
-//         "@octorelease/changelog",
-//         ["@octorelease/npm", {
-//             aliasTags: {
-//                 "latest": "zowe-v1-lts"
-//             },
-//             smokeTest: true,
-//             tarballDir: "dist"
-//         }],
-//         ["@octorelease/github", {
-//             assets: "dist/*.tgz",
-//             checkPrLabels: true
-//         }],
-//         "@octorelease/git"
-//     ]
-// };
-
 module.exports = {
     branches: [
         {
             name: "master",
-            level: "minor"
+            level: "minor",
+            dependencies: ["@zowe/imperative"]
         },
         {
             name: "next",
@@ -46,13 +15,18 @@ module.exports = {
         }
     ],
     plugins: [
-        "semantic-release-zowe-cli",
-        ["@semantic-release/npm", {
+        "@octorelease/changelog",
+        ["@octorelease/npm", {
+            aliasTags: {
+                "latest": "zowe-v1-lts"
+            },
+            smokeTest: true,
             tarballDir: "dist"
         }],
-        ["@semantic-release/github", {
-            assets: "dist/*.tgz"
+        ["@octorelease/github", {
+            assets: "dist/*.tgz",
+            checkPrLabels: true
         }],
-        "@semantic-release/git"
+        "@octorelease/git"
     ]
 };
