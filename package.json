@@ -12,6 +12,7 @@
     "@zowe/perf-timing": "1.0.6"
   },
   "devDependencies": {
+    "@octorelease/lerna": "^0.0.1",
     "lerna": "^4.0.0"
   },
   "publishConfig": {
