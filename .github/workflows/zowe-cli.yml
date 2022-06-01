@@ -10,12 +10,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [12.x, 14.x, 16.x]
+        node-version: [14.x, 16.x, 18.x]
         os: [ubuntu-latest]
-
-    env:
-      OS: ${{ matrix.os }}
-      NODE: ${{ matrix.node-version }}
 
     steps:
     - name: Checkout
@@ -26,19 +22,17 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Use NPM v7
-      id: npm7
-      run: npm install -g npm@^7
+    - name: Update NPM
+      if: ${{ matrix.node-version == '14.x' }}
+      run: npm install -g npm@7
 
-    - name: Install NPM Dependencies
-      id: install
+    - name: Install Dependencies
       run: npm ci
 
-    # - name: Update NPM Dependencies
-    #   id: update
-    #   uses: t1m0thyj/node-versioner@master
-    #   with:
-    #     actions: update
+    - name: Update Dependencies
+      uses: octorelease/run-script@master
+      with:
+        script: npmUpdate
 
     - name: Build Source
       id: build
@@ -48,58 +42,42 @@ jobs:
       id: test
       run: npm run test || true
 
-  publish:
-    if: github.event_name == 'push' && github.repository == 't1m0thyj/zowe-deploy-test' && !contains(github.event.head_commit.message, '[ci skip]')
+  release:
+    if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+        persist-credentials: false
+        ref: ${{ github.ref }}
 
-    # - run: git pull --no-rebase --no-tags
-
-    - name: Use Node.js 12.x
+    - name: Use Node.js LTS
       uses: actions/setup-node@v2
       with:
-        node-version: 12.x
+        node-version: 'lts/*'
 
-    - name: Use NPM v7
-      id: npm7
-      run: npm install -g npm@^7
+    - name: Install Dependencies
+      run: npm ci
 
-    - run: npm ci
-      id: install
-
-    # - uses: t1m0thyj/node-versioner@master
-    #   id: update
-    #   with:
-    #     actions: update
-    #     commit-updates: true
-    #     git-committer-name: zowe-robot
-    #     git-committer-email: zowe.robot@gmail.com
+    - name: Update Dependencies
+      uses: octorelease/run-script@master
+      env:
+        GIT_COMMITTER_NAME: zowe-robot
+        GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
+      with:
+        script: npmUpdate
 
     - run: npm run build --if-present
       id: build
 
-    # - uses: t1m0thyj/node-versioner@master
-    #   id: version
-    #   with:
-    #     actions: version
-    #     git-committer-name: zowe-robot
-    #     git-committer-email: zowe.robot@gmail.com
-    #     github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-
-    # - uses: t1m0thyj/node-versioner@master
-    #   id: publish
-    #   with:
-    #     actions: publish
-    #     github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
-    #     npm-token: ${{ secrets.NPM_TOKEN }}
-    
-    - uses: t1m0thyj/node-versioner@master
+    - uses: octorelease/octorelease@master
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
-        GITHUB_TOKEN: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+        GIT_CREDENTIALS: x-access-token:${{ secrets.ADMIN_GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

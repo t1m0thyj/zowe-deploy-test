@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Me too
+
 ## `100.0.1`
 
 - aardvark
