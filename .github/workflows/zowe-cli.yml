@@ -42,7 +42,7 @@ jobs:
       id: test
       run: npm run test || true
 
-  publish:
+  release:
     if: github.event_name == 'push'
     needs: test
     runs-on: ubuntu-latest
