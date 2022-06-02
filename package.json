@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/perf-timing": "1.0.6"
+    "@zowe/perf-timing": "1.0.7"
   },
   "devDependencies": {
     "@octorelease/lerna": "^0.1.1",
