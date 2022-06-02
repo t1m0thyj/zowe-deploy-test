@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- I should have updated perf-timing :(
+- I should have updated perf-timing.
 
 ## `100.0.1`
 
