@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- Me too :)
+- Me too.
 
 ## `100.0.1`
 
