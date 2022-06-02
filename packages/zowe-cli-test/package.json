@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@t1m0thyj/zowe-sdk-test": "100.0.5",
-    "@zowe/perf-timing": "1.0.6"
+    "@zowe/perf-timing": "1.0.7"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
