@@ -2,7 +2,7 @@
 
 ## Recent Changes
 
-- Test for demo dry run (again)
+- Test for demo dry run (again x2)
 
 ## `1.8.9`
 
