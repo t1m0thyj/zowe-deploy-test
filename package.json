@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@zowe/imperative": "5.3.1"
+    "@zowe/imperative": "5.3.7"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
