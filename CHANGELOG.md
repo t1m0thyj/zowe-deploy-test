@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Test "release-minor" label on PR
+
 ## `1.8.11`
 
 - Test for live demo
