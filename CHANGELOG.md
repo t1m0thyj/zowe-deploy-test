@@ -1,6 +1,6 @@
 # Changelog
 
-## Recent Changes
+## `1.9.0`
 
 - Test "release-minor" label on PR
 
