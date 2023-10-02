@@ -1,5 +1,9 @@
 # Changelog
 
+## Recent Changes
+
+- Add dep on v99 package
+
 ## `100.0.6`
 
 - Me too..

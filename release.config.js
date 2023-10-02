@@ -29,7 +29,8 @@ module.exports = {
                 "latest": "zowe-v1-lts"
             },
             smokeTest: true,
-            tarballDir: "dist"
+            tarballDir: "dist",
+            versionIndependent: ["@t1m0thyj/zowe-v99-test"]
         }],
         ["@octorelease/github", {
             assets: "dist/*.tgz",
