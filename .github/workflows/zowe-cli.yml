@@ -16,7 +16,7 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
+
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
@@ -30,7 +30,7 @@ jobs:
       run: npm ci
 
     - name: Update Dependencies
-      uses: octorelease/run-script@master
+      uses: zowe-actions/octorelease/script@v1
       with:
         script: npmUpdate
 
@@ -64,7 +64,7 @@ jobs:
       run: npm ci
 
     - name: Update Dependencies
-      uses: octorelease/run-script@master
+      uses: zowe-actions/octorelease/script@v1
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com
@@ -74,7 +74,7 @@ jobs:
     - run: npm run build --if-present
       id: build
 
-    - uses: octorelease/octorelease@master
+    - uses: zowe-actions/octorelease@feat/lerna-independent-version
       env:
         GIT_COMMITTER_NAME: zowe-robot
         GIT_COMMITTER_EMAIL: zowe.robot@gmail.com

@@ -1,6 +1,6 @@
 {
-  "name": "@t1m0thyj/zowe-cli-test",
-  "version": "100.0.6",
+  "name": "@t1m0thyj/zowe-v99-test",
+  "version": "99.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@t1m0thyj/zowe-sdk-test": "100.0.6",
-    "@t1m0thyj/zowe-v99-test": "99.1.0",
     "@zowe/perf-timing": "1.0.7"
   },
   "publishConfig": {
